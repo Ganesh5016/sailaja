@@ -5,6 +5,11 @@ const cors = require('cors');
 const stripe = require('stripe')('YOUR_STRIPE_SECRET_KEY');
 app.use(cors());
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('API is running successfully!');
+});
+
 app.post('/api/auth/login', (req, res) => {
   // Login API endpoint
 });
