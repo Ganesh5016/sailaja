@@ -30,3 +30,8 @@ app.post('/api/payment', async (req, res) => {
     res.status(500).json({ message: 'Payment failed' });
   }
 });
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
