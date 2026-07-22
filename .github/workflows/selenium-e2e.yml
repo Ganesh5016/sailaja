@@ -24,16 +24,17 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies & Build Project
+        working-directory: ./frontend
         run: |
-          # If package.json is in the root, otherwise change directory first
           if [ -f "package.json" ]; then
             npm install
             npm run build
           else
-            echo "No package.json found in root, assuming dist/ is already committed."
+            echo "No package.json found in frontend/, assuming dist/ is already committed."
           fi
 
       - name: Serve frontend 'dist' folder in background
+        working-directory: ./frontend
         run: |
           npm install -g serve
           # Change "dist" to the actual build output directory if needed
