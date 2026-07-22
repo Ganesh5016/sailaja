@@ -59,6 +59,7 @@ jobs:
       - name: Run Selenium Tests (300+ Cases)
         env:
           TEST_URL: http://127.0.0.1:8080
+          PYTHONPATH: ${{ github.workspace }}
         run: |
           # Run pytest and use the custom excel_reporter hook we created
           export DISPLAY=:99
