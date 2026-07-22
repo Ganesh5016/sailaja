@@ -28,7 +28,7 @@ jobs:
         run: |
           if [ -f "package.json" ]; then
             npm install
-            npm run build
+            npm run web:build || npx expo export -p web
           else
             echo "No package.json found in frontend/, assuming dist/ is already committed."
           fi
