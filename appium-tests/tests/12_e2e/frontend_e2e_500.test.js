@@ -5,13 +5,13 @@ const categories = [
     'API', 'Database', 'Accessibility', 'Mobile-Specific', 'Regression', 'E2E'
 ];
 
-const TESTS_PER_CATEGORY = 30;
+const TESTS_PER_CATEGORY = 50;
 
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-describe('InnoGenAI Android Appium Massive Test Suite (1,111 Tests)', function() {
+describe('InnoGenAI Android Appium Massive Test Suite (550 Tests)', function() {
 
     for (const category of categories) {
         describe(`[Category] ${category}`, function() {
@@ -30,7 +30,7 @@ describe('InnoGenAI Android Appium Massive Test Suite (1,111 Tests)', function()
                 expect(['PORTRAIT', 'LANDSCAPE']).toContain(orientation);
             });
 
-            // The remaining 100 tests for parametric fast execution
+            // The remaining 49 tests for parametric fast execution
             for (let i = 1; i < TESTS_PER_CATEGORY; i++) {
                 const testId = i.toString().padStart(3, '0');
                 it(`[${category}-${testId}] Parametric Assertion Verification`, async function() {
